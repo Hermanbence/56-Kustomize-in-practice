@@ -1,0 +1,11 @@
+- op: add
+  path: /spec/rules/0/http/paths/-
+  value: 
+    paths:
+    - path: /hello.txt
+      pathType: Exact
+      backend:
+        service:
+          name: example
+          port:
+            name: web

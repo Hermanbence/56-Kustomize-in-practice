@@ -1,0 +1,21 @@
+namespace: kustom
+commonLabels:
+  app: example
+resources:
+- deployment.yaml
+- service.yaml
+- ingress.yaml
+patches:
+- path: patch-replicacount.yaml
+- path: patch-image.yaml
+- path: patch-volume.yaml
+- path: patch-ingress.yaml
+  target:
+    group: networking.k8s.io
+    version: v2
+    kind: Ingress
+    name: example
+configMapGenerator:
+  - name: content
+    files:
+      - content/hello.txt

@@ -2,17 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: example
-  labels:
-    app: example
+  labels: 
+    example: remains
 spec:
   replicas: 1
-  selector:
-    matchLabels:
-      app: example
   template:
-    metadata:
-      labels:
-        app: example
     spec:
       containers:
       - name: nginx
@@ -20,3 +14,4 @@ spec:
         ports:
         - containerPort: 80
           name: web
+
