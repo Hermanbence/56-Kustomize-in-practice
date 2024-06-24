@@ -15,3 +15,4 @@ kubectl rollout undo deploy/example -n kustom
 kubectl get cm -n kustom
 - cm --> configmap
 kubectl delete cm -l app=example -n kustom
+kubectl apply -k overlays/test 
